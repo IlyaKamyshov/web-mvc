@@ -1,26 +1,20 @@
-
 GET http://localhost:8080/api/posts
 
 ###
-
 POST http://localhost:8080/api/posts
 Content-Type: application/json
 
-{
-  "content": "the Post"
-}
+{"content": "the Post"}
 
 ###
-
 POST http://localhost:8080/api/posts
 Content-Type: application/json
 
-{
-  "id": 31,
-  "content": "the Post"
-}
+{"id": 3, "content": "the Post NEW"}
 
 ###
-
-DELETE http://localhost:8080/api/posts/31
-
+DELETE http://localhost:8080/api/posts/2
+###
+GET http://localhost:8080/api/posts/2
+###
+GET http://localhost:8080/api/posts/removed
