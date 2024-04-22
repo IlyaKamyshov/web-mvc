@@ -20,6 +20,11 @@ public class PostController {
         return service.all();
     }
 
+    @GetMapping("/removed")
+    public List<Post> removed() {
+        return service.removed();
+    }
+
     @GetMapping("/{id}")
     public Post getById(@PathVariable long id){
         return service.getById(id);

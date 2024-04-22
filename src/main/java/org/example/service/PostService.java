@@ -1,9 +1,10 @@
 package org.example.service;
 
-import org.example.exception.NotFoundException;
 import org.example.model.Post;
 import org.example.repository.PostRepository;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 
 import java.util.List;
@@ -20,8 +21,12 @@ public class PostService {
         return repository.all();
     }
 
+    public List<Post> removed() {
+        return repository.removed();
+    }
+
     public Post getById(long id) {
-        return repository.getById(id).orElseThrow(NotFoundException::new);
+        return repository.getById(id);
     }
 
     public Post save(Post post) {
